@@ -1,0 +1,6 @@
+[opensuse-13.1-update-oss]
+name=opensuse-13.1-update-oss
+enabled=1
+autorefresh=1
+baseurl=https://pkg.blinux.fr/opensuse/update/13.1/
+type=rpm-md

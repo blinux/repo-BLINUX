@@ -1,0 +1,8 @@
+[blinux-chartreuse-curly]
+name=blinux-chartreuse-curly
+enabled=1
+autorefresh=1
+baseurl=https://pkg.blinux.fr/blinux/chartreuse_curly/
+type=NONE
+priority=1
+gpgcheck=0
