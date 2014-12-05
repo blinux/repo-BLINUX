@@ -30,7 +30,7 @@ Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
 
-Source0:        blinux-chartreuse-curly.repo
+Source0:        blinux-zizicoincoin-zolive.repo
 Source1:	opensuse-13.1-distribution-non-oss.repo
 Source2:	opensuse-13.1-distribution-oss.repo	
 Source3:	opensuse-13.1-update-non-oss.repo
@@ -68,7 +68,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_sysconfdir}/zypp/repos.d/blinux-chartreuse-curly.repo
+%{_sysconfdir}/zypp/repos.d/blinux-zizicoincoin-zolive.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-non-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-non-oss.repo
