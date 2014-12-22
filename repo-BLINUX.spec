@@ -52,7 +52,6 @@ Blinux repositories files
 %build
 
 %post
-rm /etc/machine-id
 
 %install
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
