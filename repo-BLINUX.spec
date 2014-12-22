@@ -52,7 +52,7 @@ Blinux repositories files
 %build
 
 %post
-
+rm /etc/machine-id
 
 %install
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
@@ -68,7 +68,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_sysconfdir}/zypp/repos.d/blinux-zizicoincoin-zolive.repo
+%{_sysconfdir}/zypp/repos.d/blinux-chartreuse-curly.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-non-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-non-oss.repo
@@ -76,5 +76,8 @@ rm -rf %{buildroot}
 %{_sysconfdir}/zypp/zypp.conf
 
 %changelog
+* Mon Dec 22 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
+- Add Chartreuse Curly file
+
 * Mon Oct 06 2014 Emmanuel Vadot <elbarto@bocal.org> - 0.1-0
 - Package creation
