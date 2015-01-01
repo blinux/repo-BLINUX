@@ -36,6 +36,8 @@ Source2:	opensuse-13.1-distribution-oss.repo
 Source3:	opensuse-13.1-update-non-oss.repo
 Source4:	opensuse-13.1-update-oss.repo
 Source5:	zypp.conf
+Source6:	blinux-dup
+Source6:	blinux-dup.service
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
@@ -55,15 +57,22 @@ Blinux repositories files
 
 %install
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+mkdir -p %{buildroot}/%{_sbindir}
+mkdir -p %{buildroot}/usr/lib/systemd/system/
 install -D -p -m 755 %{SOURCE0} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE1} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE2} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE3} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE4} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE5} %{buildroot}/%{_sysconfdir}/zypp/
+install -D -p -m 755 %{SOURCE6} %{buildroot}/%{_sbindir}/
+install -D -p -m 755 %{SOURCE7} %{buildroot}/usr/lib/systemd/system/
 
 %clean
 rm -rf %{buildroot}
+
+%post
+/usr/bin/systemctl enable blinux-dup.service
 
 %files
 %defattr(-,root,root)

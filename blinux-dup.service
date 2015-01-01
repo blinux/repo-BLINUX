@@ -1,0 +1,16 @@
+[Unit]
+Description=Blinux Update Service
+After=apparmor.service local-fs.target network.service NetworkManager.service
+Before=getty@tty1.service xdm.service
+ConditionPathExists=/var/lib/blinux-dup/runme
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/blinux-dup
+RemainAfterExit=yes
+TimeoutSec=0
+ExecStartPost=/usr/bin/systemctl restart systemd-vconsole-setup.service
+StandardInput=tty
+
+[Install]
+WantedBy=multi-user.target
