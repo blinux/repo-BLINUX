@@ -1,0 +1,8 @@
+[vlc]
+name=vlc
+enabled=1
+autorefresh=1
+baseurl=https://pkg.blinux.fr/vlc/13.1/
+type=rpm-md
+priority=1
+gpgcheck=0

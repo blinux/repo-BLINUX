@@ -1,0 +1,43 @@
+#!/bin/sh
+
+fail() {
+    echo "Failed"
+    echo "Something have failed, please retry from EPITECH to avoid any problems"
+    read
+    exit 1
+}
+
+sig() {
+    echo "SIGTERM or SIGINT catched, exiting"
+    exit 1
+}
+
+trap sig SIGINT SIGTERM
+
+sleep 5
+
+echo "We're going to perform a distribution update"
+echo "Do NOT reboot or shutdown your computer during the update"
+echo "Press ENTER to continue"
+
+read
+
+echo -n "Testing the network... "
+ping -c 1 -W 10 pkg.blinux.fr >/dev/null
+if [ $? -ne 0 ]; then
+    fail
+fi
+echo "OK"
+
+echo -n "Perfoming update... "
+zypper -q -n dup --auto-agree-with-licenses
+if [ $? -ne 0 ]; then
+    fail
+fi
+echo "OK"
+
+rm /var/lib/blinux-dup/runme
+echo "Rebooting in 5 seconds"
+sleep 5
+
+shutdown -r now
