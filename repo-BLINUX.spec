@@ -30,14 +30,15 @@ Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
 
-Source0:        blinux-chartreuse-curly.repo
-Source1:	opensuse-13.1-distribution-non-oss.repo
-Source2:	opensuse-13.1-distribution-oss.repo	
-Source3:	opensuse-13.1-update-non-oss.repo
-Source4:	opensuse-13.1-update-oss.repo
-Source5:	zypp.conf
-Source6:	blinux-dup
-Source6:	blinux-dup.service
+Source0:	zypp.conf
+Source1:	blinux-dup
+Source2:	blinux-dup.service
+Source3:        blinux-chartreuse-curly.repo
+Source4:        vlc.repo
+Source5:	opensuse-13.1-distribution-non-oss.repo
+Source6:	opensuse-13.1-distribution-oss.repo	
+Source7:	opensuse-13.1-update-non-oss.repo
+Source8:	opensuse-13.1-update-oss.repo
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
@@ -59,14 +60,15 @@ Blinux repositories files
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 mkdir -p %{buildroot}/%{_sbindir}
 mkdir -p %{buildroot}/usr/lib/systemd/system/
-install -D -p -m 755 %{SOURCE0} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE1} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE2} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 755 %{SOURCE0} %{buildroot}/%{_sbindir}/
+install -D -p -m 755 %{SOURCE1} %{buildroot}/usr/lib/systemd/system/
+install -D -p -m 755 %{SOURCE2} %{buildroot}/%{_sysconfdir}/zypp/
 install -D -p -m 755 %{SOURCE3} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE4} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE5} %{buildroot}/%{_sysconfdir}/zypp/
-install -D -p -m 755 %{SOURCE6} %{buildroot}/%{_sbindir}/
-install -D -p -m 755 %{SOURCE7} %{buildroot}/usr/lib/systemd/system/
+install -D -p -m 755 %{SOURCE5} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 755 %{SOURCE6} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 755 %{SOURCE7} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 755 %{SOURCE8} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 
 %clean
 rm -rf %{buildroot}
@@ -76,12 +78,15 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
+%{_sbindir}/blinux-dup
+/usr/lib/systemd/system/blinux-dup.service
+%{_sysconfdir}/zypp/zypp.conf
 %{_sysconfdir}/zypp/repos.d/blinux-chartreuse-curly.repo
+%{_sysconfdir}/zypp/repos.d/vlc.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-non-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-non-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-oss.repo
-%{_sysconfdir}/zypp/zypp.conf
 
 %changelog
 * Mon Dec 22 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
