@@ -25,12 +25,12 @@
 
 Name:		repo-BLINUX
 Version:        2.0
-Release:        0
+Release:        1 
 Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
 
-Source0:        blinux-zizicoincoin-zolive.repo
+Source0:        blinux-chartreuse-curly.repo
 Source1:	opensuse-13.1-distribution-non-oss.repo
 Source2:	opensuse-13.1-distribution-oss.repo	
 Source3:	opensuse-13.1-update-non-oss.repo
@@ -53,7 +53,6 @@ Blinux repositories files
 
 %post
 
-
 %install
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 install -D -p -m 755 %{SOURCE0} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
@@ -68,7 +67,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{_sysconfdir}/zypp/repos.d/blinux-zizicoincoin-zolive.repo
+%{_sysconfdir}/zypp/repos.d/blinux-chartreuse-curly.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-non-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-oss.repo
 %{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-non-oss.repo
@@ -76,5 +75,8 @@ rm -rf %{buildroot}
 %{_sysconfdir}/zypp/zypp.conf
 
 %changelog
+* Mon Dec 22 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
+- Add Chartreuse Curly file
+
 * Mon Oct 06 2014 Emmanuel Vadot <elbarto@bocal.org> - 0.1-0
 - Package creation
