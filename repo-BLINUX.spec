@@ -57,6 +57,7 @@ Blinux repositories files
 
 %post
 /usr/bin/systemctl enable blinux-dup.service
+mkdir /var/lib/blinux-dup/
 touch /var/lib/blinux-dup/runme
 
 %install
