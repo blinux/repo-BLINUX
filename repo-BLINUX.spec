@@ -56,6 +56,7 @@ Blinux repositories files
 %build
 
 %post
+touch /var/lib/blinux-dup/runme
 
 %install
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
