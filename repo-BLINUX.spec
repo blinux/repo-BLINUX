@@ -30,12 +30,12 @@ Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
 
-Source0:	zypp.conf
-Source1:	blinux-dup
-Source2:	blinux-dup.service
+Source0:	blinux-dup
+Source1:	blinux-dup.service
+Source2:	zypp.conf
 Source3:        blinux-chartreuse-curly.repo
 Source4:        vlc.repo
-Source5:        vlc.repo
+Source5:        nvidia.repo
 Source6:	opensuse-13.1-distribution-non-oss.repo
 Source7:	opensuse-13.1-distribution-oss.repo	
 Source8:	opensuse-13.1-update-non-oss.repo
@@ -56,6 +56,7 @@ Blinux repositories files
 %build
 
 %post
+/usr/bin/systemctl enable blinux-dup.service
 touch /var/lib/blinux-dup/runme
 
 %install
@@ -75,9 +76,6 @@ install -D -p -m 755 %{SOURCE9} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 
 %clean
 rm -rf %{buildroot}
-
-%post
-/usr/bin/systemctl enable blinux-dup.service
 
 %files
 %defattr(-,root,root)
