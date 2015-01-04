@@ -25,7 +25,7 @@
 
 Name:		repo-BLINUX
 Version:        2.0
-Release:        1 
+Release:        3
 Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
