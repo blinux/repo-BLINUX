@@ -35,7 +35,7 @@ fi
 echo "OK"
 
 echo -n "Perfoming update... "
-zypper -q -n dup --auto-agree-with-licenses
+zypper -n dup --auto-agree-with-licenses
 if [ $? -ne 0 ]; then
     fail
 fi
