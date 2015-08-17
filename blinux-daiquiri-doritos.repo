@@ -1,0 +1,8 @@
+[daiquiri_doritos]
+name=daiquiri_doritos
+enabled=1
+autorefresh=1
+baseurl=https://pkg.blinux.fr/blinux/daiquiri_doritos/
+type=NONE
+priority=1
+gpgcheck=0

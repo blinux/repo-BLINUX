@@ -1,6 +1,0 @@
-[opensuse-13.1-distribution-non-oss]
-name=opensuse-13.1-distribution-non-oss
-enabled=1
-autorefresh=1
-baseurl=https://pkg.blinux.fr/opensuse/distribution/13.1/repo/non-oss/
-type=yast2

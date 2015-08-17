@@ -2,7 +2,7 @@
 name=nvidia
 enabled=1
 autorefresh=1
-baseurl=https://pkg.blinux.fr/nvidia/13.1/
+baseurl=https://pkg.blinux.fr/nvidia/13.2/
 type=rpm-md
 priority=1
 gpgcheck=0

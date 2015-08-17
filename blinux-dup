@@ -1,6 +1,11 @@
 #!/bin/sh
 
+restore_bootloader() {
+    cp /boot/efi/EFI/blinux/grubx64.efi /boot/efi/EFI/Boot/bootx64.efi
+}
+
 fail() {
+    restore_bootloader
     echo "Failed"
     echo "Something have failed, please retry from EPITECH to avoid any problems"
     read
@@ -35,6 +40,8 @@ if [ $? -ne 0 ]; then
     fail
 fi
 echo "OK"
+
+restore_bootloader
 
 rm /var/lib/blinux-dup/runme
 echo "Rebooting in 5 seconds"

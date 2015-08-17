@@ -1,6 +1,0 @@
-[opensuse-13.1-update-non-oss]
-name=opensuse-13.1-update-non-oss
-enabled=1
-autorefresh=1
-baseurl=https://pkg.blinux.fr/opensuse/update/13.1-non-oss/
-type=rpm-md

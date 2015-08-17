@@ -24,8 +24,8 @@
 # POSSIBILITY OF SUCH DAMAGE.
 
 Name:		repo-BLINUX
-Version:        2.0
-Release:        3
+Version:        3.0
+Release:        0
 Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
@@ -33,13 +33,13 @@ Group:          System Environment/Base
 Source0:	blinux-dup
 Source1:	blinux-dup.service
 Source2:	zypp.conf
-Source3:        blinux-chartreuse-curly.repo
+Source3:        blinux-daiquiri-doritos.repo
 Source4:        vlc.repo
 Source5:        nvidia.repo
-Source6:	opensuse-13.1-distribution-non-oss.repo
-Source7:	opensuse-13.1-distribution-oss.repo	
-Source8:	opensuse-13.1-update-non-oss.repo
-Source9:	opensuse-13.1-update-oss.repo
+Source6:	opensuse-13.2-distribution-non-oss.repo
+Source7:	opensuse-13.2-distribution-oss.repo	
+Source8:	opensuse-13.2-update-non-oss.repo
+Source9:	opensuse-13.2-update-oss.repo
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
@@ -83,15 +83,18 @@ rm -rf %{buildroot}
 %{_sbindir}/blinux-dup
 /usr/lib/systemd/system/blinux-dup.service
 %{_sysconfdir}/zypp/zypp.conf
-%{_sysconfdir}/zypp/repos.d/blinux-chartreuse-curly.repo
+%{_sysconfdir}/zypp/repos.d/blinux-daiquiri-doritos.repo
 %{_sysconfdir}/zypp/repos.d/vlc.repo
 %{_sysconfdir}/zypp/repos.d/nvidia.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-non-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.1-distribution-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-non-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.1-update-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-13.2-distribution-non-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-13.2-distribution-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-13.2-update-non-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-13.2-update-oss.repo
 
 %changelog
+* Mon Aug 17 2015 Emmanuel Vadot <elbarto@bocal.org> - 3.0-0
+- Update to Daiquiri Doritos
+
 * Mon Dec 22 2014 Emmanuel Vadot <elbarto@bocal.org> - 2.0-0
 - Add Chartreuse Curly file
 
