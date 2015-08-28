@@ -33,13 +33,13 @@ Group:          System Environment/Base
 Source0:	blinux-dup
 Source1:	blinux-dup.service
 Source2:	zypp.conf
-Source3:        blinux-daiquiri-doritos.repo
+Source3:        blinux.repo
 Source4:        vlc.repo
 Source5:        nvidia.repo
-Source6:	opensuse-13.2-distribution-non-oss.repo
-Source7:	opensuse-13.2-distribution-oss.repo	
-Source8:	opensuse-13.2-update-non-oss.repo
-Source9:	opensuse-13.2-update-oss.repo
+Source6:	opensuse-distribution-non-oss.repo
+Source7:	opensuse-distribution-oss.repo
+Source8:	opensuse-update-non-oss.repo
+Source9:	opensuse-update-oss.repo
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
@@ -65,15 +65,15 @@ mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 mkdir -p %{buildroot}/%{_sbindir}
 mkdir -p %{buildroot}/usr/lib/systemd/system/
 install -D -p -m 755 %{SOURCE0} %{buildroot}/%{_sbindir}/
-install -D -p -m 755 %{SOURCE1} %{buildroot}/usr/lib/systemd/system/
-install -D -p -m 755 %{SOURCE2} %{buildroot}/%{_sysconfdir}/zypp/
-install -D -p -m 755 %{SOURCE3} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE4} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE5} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE6} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE7} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE8} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
-install -D -p -m 755 %{SOURCE9} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE1} %{buildroot}/usr/lib/systemd/system/
+install -D -p -m 644 %{SOURCE2} %{buildroot}/%{_sysconfdir}/zypp/
+install -D -p -m 644 %{SOURCE3} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE4} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE5} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE6} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE7} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE8} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
+install -D -p -m 644 %{SOURCE9} %{buildroot}/%{_sysconfdir}/zypp/repos.d/
 
 %clean
 rm -rf %{buildroot}
@@ -83,13 +83,13 @@ rm -rf %{buildroot}
 %{_sbindir}/blinux-dup
 /usr/lib/systemd/system/blinux-dup.service
 %{_sysconfdir}/zypp/zypp.conf
-%{_sysconfdir}/zypp/repos.d/blinux-daiquiri-doritos.repo
+%{_sysconfdir}/zypp/repos.d/blinux.repo
 %{_sysconfdir}/zypp/repos.d/vlc.repo
 %{_sysconfdir}/zypp/repos.d/nvidia.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.2-distribution-non-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.2-distribution-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.2-update-non-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-13.2-update-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-distribution-non-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-distribution-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-update-non-oss.repo
+%{_sysconfdir}/zypp/repos.d/opensuse-update-oss.repo
 
 %changelog
 * Mon Aug 17 2015 Emmanuel Vadot <elbarto@bocal.org> - 3.0-0
