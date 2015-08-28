@@ -82,14 +82,14 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_sbindir}/blinux-dup
 /usr/lib/systemd/system/blinux-dup.service
-%{_sysconfdir}/zypp/zypp.conf
-%{_sysconfdir}/zypp/repos.d/blinux.repo
-%{_sysconfdir}/zypp/repos.d/vlc.repo
-%{_sysconfdir}/zypp/repos.d/nvidia.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-distribution-non-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-distribution-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-update-non-oss.repo
-%{_sysconfdir}/zypp/repos.d/opensuse-update-oss.repo
+%config(noreplace) %{_sysconfdir}/zypp/zypp.conf
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/blinux.repo
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/vlc.repo
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/nvidia.repo
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/opensuse-distribution-non-oss.repo
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/opensuse-distribution-oss.repo
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/opensuse-update-non-oss.repo
+%config(noreplace) %{_sysconfdir}/zypp/repos.d/opensuse-update-oss.repo
 
 %changelog
 * Mon Aug 17 2015 Emmanuel Vadot <elbarto@bocal.org> - 3.0-0
