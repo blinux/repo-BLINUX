@@ -51,4 +51,6 @@ rm /var/lib/blinux-dup/runme
 echo "Rebooting in 5 seconds"
 sleep 5
 
+systemctl disable blinux-setup.service
+
 shutdown -r now
