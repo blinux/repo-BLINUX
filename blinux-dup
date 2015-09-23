@@ -27,6 +27,10 @@ echo "Press ENTER to continue"
 
 read
 
+echo -n "Removing old repos... "
+rm /etc/zypp/repos.d/*13.1*
+echo "OK"
+
 echo -n "Testing the network... "
 ping -c 1 -W 10 pkg.blinux.fr >/dev/null
 if [ $? -ne 0 ]; then
