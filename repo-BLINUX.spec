@@ -25,7 +25,7 @@
 
 Name:		repo-BLINUX
 Version:        3.0
-Release:        2
+Release:        3
 Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
@@ -55,10 +55,19 @@ Blinux repositories files
 
 %build
 
+%pre
+%service_add_pre %{name}.service
+
 %post
-/usr/bin/systemctl enable blinux-dup.service
+%service_add_post %{name}.service
 mkdir /var/lib/blinux-dup/
 touch /var/lib/blinux-dup/runme
+
+%preun
+%service_del_preun %{name}.service
+
+%postun
+%service_del_postun %{name}.service
 
 %install
 mkdir -p %{buildroot}/%{_sysconfdir}/zypp/repos.d/
