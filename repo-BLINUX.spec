@@ -1,5 +1,5 @@
 #-
-# Copyright 2014 Emmanuel Vadot <elbarto@bocal.org>
+# Copyright 2014-2015 Emmanuel Vadot <elbarto@bocal.org>
 # All rights reserved
 #
 # Redistribution and use in source and binary forms, with or without
@@ -25,7 +25,7 @@
 
 Name:		repo-BLINUX
 Version:        3.0
-Release:        1
+Release:        2
 Summary:        BLinux repository
 License:        BSD-2-Clause
 Group:          System Environment/Base
